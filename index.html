@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/circle.png" type="image/png">
+    <link rel="icon" href="studybox.jpg" type="image/jpg">
     </head>
 
 <body>
     <header id="main-header">
         <div class="container header-content">
             <div class="logo">
-                <img src="circle.png" alt="StudyBox Logo and Brand Identity" height="100">
+                <img src="img/circle.png" alt="StudyBox Logo and Brand Identity" height="100">
             </div>
             
             <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-menu-toggle">
@@ -63,7 +63,7 @@
                 <h3 class="sub-heading">Because We Don't Just Teach; We Give Life-Long Lessons.</h3> 
                 <div class="about-grid">
                     <div class="about-text"> 
-                        <img src="img/circle.png" alt="StudyBox small logo icon" height="50">
+                        <img src="/img/circle.png" alt="StudyBox small logo icon" height="50">
                         <p>StudyBox is more than just a coaching
                             institute; we are a dedicated learning partner
                             committed to your success. Founded on the principle of personalized education, we provide
@@ -215,10 +215,39 @@
         });
         
     </script>
+    <script src="js/javascript.js"></script>
+    
+    <script>
+        // 1. Dynamic Current Year (Consolidated)
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 2. MOBILE MENU TOGGLE LOGIC (for phones and tablets)
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('main-menu');
+            
+            // The icon element is the <i> tag inside the button
+            const icon = toggleButton.querySelector('i');
+
+            if (toggleButton && navMenu && icon) {
+                toggleButton.addEventListener('click', function () {
+                    // CRITICAL: Toggles the 'active' class on the UL element
+                    navMenu.classList.toggle('active'); 
+                    
+                    // Icon toggle: Change bars to X and vice versa
+                    if (navMenu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times'); // 'fa-times' is the 'X' icon
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars'); // 'fa-bars' is the hamburger icon
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
 </body>
 
-
 </html>
-
-
-
