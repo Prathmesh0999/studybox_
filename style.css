@@ -1,0 +1,674 @@
+/*
+ * STUDYBOX CSS STYLESHEET
+ * Author: AI Assistant
+ * Description: Styling for the StudyBox website.
+ */
+
+/* --- 1. Global Reset & Utilities --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --accent-color: #28a745; /* Green - for CTAs/Highlights */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --white-color: #fff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+/* NEW: Mobile Menu Toggle Button (hidden by default on desktop) */
+.mobile-menu-toggle {
+    display: none; /* Hide on large screens */
+    background: none;
+    border: none;
+    color: var(--text-color); 
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+/* --- 2. Header & Navigation --- */
+
+#main-header {
+    background: var(--white-color);
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    height: 60px; /* Adjusted size for better fit */
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+#main-nav ul li {
+    margin-left: 20px;
+}
+
+#main-nav ul li a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    padding: 8px 15px !important;
+    border-radius: 5px;
+    font-weight: 600 !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn {
+    background-color: var(--secondary-color);
+    color: var(--white-color) !important;
+}
+
+.login-btn:hover {
+    background-color: #5a6268;
+}
+
+.signup-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color) !important;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Social Media Icons */
+.whatsapp-icon a,
+.instagram-icon a {
+    font-size: 1.5rem;
+    color: var(--text-color) !important;
+    padding: 0 !important;
+}
+
+.whatsapp-icon a:hover {
+    color: #25d366 !important; /* WhatsApp Green */
+}
+
+.instagram-icon a:hover {
+    color: #E1306C !important; /* Instagram Pink */
+}
+
+
+/* --- 3. Hero Section --- */
+
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/hero-bg.jpg') no-repeat center center/cover; /* Placeholder for a background image */
+    color: var(--white-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.sub-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-primary:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+
+/* --- 4. About Section --- */
+
+#about h2,
+#about h3 {
+    text-align: center;
+}
+
+.sub-heading {
+    color: var(--secondary-color);
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.about-grid {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 2;
+    padding: 20px;
+}
+
+.about-text img {
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.mission-box {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mission-box h5 {
+    border-bottom: 2px solid var(--white-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.contact-info {
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+/* --- 5. Programs Section --- */
+
+#programs h2 {
+    text-align: center;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.program-card {
+    background: var(--white-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.program-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.program-card ul {
+    list-style: none;
+}
+
+.program-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.program-card ul li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+
+/* --- 6. Features Section --- */
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background: var(--white-color);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-image-container {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.slideshow {
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slideshow img.active {
+    display: block;
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+
+/* --- 7. Contact Section (Form) --- */
+
+#contact {
+    background-color: var(--light-bg);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 30px;
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- 8. Footer --- */
+
+footer {
+    background-color: var(--text-color);
+    color: var(--white-color);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--light-bg);
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- 9. Media Queries (Responsiveness) --- */
+
+/* Tablet View (Max 992px) - Minor adjustments */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    #main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .about-grid {
+        flex-direction: column;
+    }
+}
+
+/* Mobile View (Max 768px) - Critical changes for layout stacking and menu toggle */
+@media (max-width: 768px) {
+    
+    .container {
+        padding: 0 15px; /* Added padding for smaller screens */
+    }
+
+    .header-content {
+        /* Revert to single row for logo and toggle */
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* SHOW THE HAMBURGER ICON */
+    }
+
+    /* Hide the default navigation structure */
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Adjust based on your logo height/padding */
+        left: 0;
+        background-color: var(--white-color);
+        border-top: 1px solid #eee;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        padding: 10px 0;
+    }
+
+    /* Class added by JavaScript to show the menu */
+    #main-nav ul.active {
+        display: flex;
+    }
+
+    #main-nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0; /* Reset margins */
+    }
+    
+    #main-nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid #f4f4f4;
+    }
+    
+    .whatsapp-icon, .instagram-icon {
+        display: none; /* Hide social icons in the dropdown nav */
+    }
+
+    .nav-button {
+        width: 90%; 
+        margin: 10px auto;
+    }
+
+    #hero {
+        padding: 80px 0 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+
+    .sub-tagline {
+        font-size: 1.2rem;
+    }
+
+    /* Force grids to stack into a single column on tablet/mobile */
+    .program-grid, 
+    .feature-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+/* Small Mobile View (Max 480px) - Fine-tuning for small phone screens */
+@media (max-width: 480px) {
+    .logo img {
+        height: 50px;
+    }
+    
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-primary {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    /* Removed the previous #main-nav ul and li rules here 
+       as they are now handled by the 768px block for the mobile menu. */
+}
+/* Hide the default navigation structure */
+#main-nav ul {
+    display: none; /* This is hiding your menu list */
+    /* ... other styles ... */
+}
+
+/* Class added by JavaScript to show the menu */
+#main-nav ul.active {
+    display: flex; /* This is what makes it appear */
+}
+@media (max-width: 768px) {
+    /* ... */
+    #main-nav ul {
+        display: flex; /* <-- CHANGE THIS FROM 'none' to 'flex' */
+        flex-direction: column;
+        /* ... keep other styles ... */
+    }
+    /* ... */
+    /* REMOVE the #main-nav ul.active rule entirely */
+}
+/* TEMPORARILY DELETE OR COMMENT OUT THIS BLOCK */
+#main-nav ul {
+    display: none; /* <--- THIS IS THE CULPRIT IF JS FAILS */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    background-color: var(--white-color);
+    border-top: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: 10px 0;
+}
+/* TEMPORARILY DELETE OR COMMENT OUT THIS BLOCK */
+@media (max-width: 768px) {
+    /* ... (other mobile styles) ... */
+
+    /* Hide the navigation menu on mobile by default */
+    #main-nav ul {
+        display: none; /* <--- This rule ONLY applies below 768px */
+        flex-direction: column;
+        /* ... other mobile specific styles ... */
+    }
+
+    /* Rule to show the menu when the hamburger is clicked */
+    #main-nav ul.active {
+        display: flex;
+    }
+
+    /* ... (other mobile styles) ... */
+}
+/* Must be OUTSIDE of any @media block */
+#main-nav ul {
+    display: flex; /* Ensures the navigation is visible on PC/Desktop */
+    list-style: none;
+    align-items: center;
+    /* Keep other PC styles here */
+}
+/* --- 2. Header & Navigation (PC/Desktop View) --- */
+
+.header-content {
+    display: flex;
+    /* CHANGE THIS: Pushes the Logo left and the Nav Bar (last item) right */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 0;
+    
+    /* REMOVE the 'gap' property that was added for the left-aligned style */
+    gap: 0; /* Or simply remove the line entirely */
+}
+
+/* Ensure the navigation list itself aligns its content (links) correctly */
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row; 
+    align-items: center;
+    /* This ensures links group to the far right within the nav area */
+    justify-content: flex-end; 
+}
+@media (max-width: 768px) {
+    /* ... (other mobile styles) ... */
+
+    /* Hide the navigation menu on mobile by default */
+    #main-nav ul {
+        display: none; /* Hides the menu when no .active class is present */
+        /* ... other mobile specific styles ... */
+    }
+
+    /* Rule to show the menu when the hamburger is clicked */
+    #main-nav ul.active {
+        display: flex; /* Overrides 'display: none' when .active is present */
+    }
+    /* ... (rest of the mobile styles) ... */
+}
