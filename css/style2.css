@@ -1,0 +1,835 @@
+/* --- 1. Reset & Global Variables (Darker, Modern Theme) --- */
+:root {
+    /* Updated Variables from User Input */
+    --primary-color: #007bff;          /* Bright, Cool Light Blue */
+    --secondary-color: #343a40;        /* Deep Black/Dark Grey for headings and accents */
+    --text-color: #495057;             /* Dark Grey for body text */
+    --light-bg: #f8f9fa;               /* Very Light Grey/Off-White */
+    --white: #fff;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.bg-blue {
+    background-color: var(--secondary-color); /* Contact section is dark */
+    color: var(--white);
+}
+
+/* --- 2. Typography & Headings --- */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sub-heading {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+/* --- 3. Header & Navigation --- */
+#main-header {
+    background: var(--white);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    transition: transform var(--transition-speed);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#main-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+#main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Navigation Hover Animation (Underline Wipe) */
+#main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width var(--transition-speed) ease-out;
+}
+
+#main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Instagram Icon Styling */
+.instagram-icon a {
+    margin-left: 20px;
+}
+.instagram-icon i {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    transition: color var(--transition-speed);
+}
+.instagram-icon:hover i {
+    color: #e4405f; /* Instagram brand color for hover */
+}
+
+
+.nav-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login-btn, .signup-btn {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    transition: all var(--transition-speed);
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background: #0069d3;
+    border-color: #0069d3;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Ripple Effect Base CSS (JS will add the .ripple span) */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* --- 4. Hero Section --- */
+.hero-bg {
+    background: url('img/bg.png') no-repeat center center/cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(52, 58, 64, 0.8); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 60px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.tagline {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Light Blue Tagline */
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#hero h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.sub-tagline {
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.cta-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+    transition: background var(--transition-speed), transform 0.2s, box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-primary:hover {
+    background: #0069d9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5);
+}
+
+/* --- 5. About Section --- */
+.about-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.mission-box {
+    flex: 1;
+    padding: 35px;
+    background: var(--light-bg);
+    border-left: 6px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.mission-box h5 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+/* --- 6. Programs Section --- */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.program-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid var(--primary-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.program-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 10px;
+}
+
+.program-card li {
+    padding: 12px 10px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+.program-card li:hover {
+    background-color: #e9f5ff; /* Light blue background on hover */
+}
+
+.program-card li:not(:last-child) {
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.program-card li i {
+    color: var(--primary-color);
+    margin-right: 12px;
+    font-size: 0.9em;
+}
+
+/* --- 7. Features Section & Image Animation CSS --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.feature-item {
+    padding: 30px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.feature-item:hover {
+    background: #f0faff;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+}
+
+.feature-item i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: transform var(--transition-speed);
+}
+
+.feature-item:hover i {
+    transform: scale(1.1); /* Zoom effect on icon */
+}
+
+.feature-item h4 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Slideshow Container Styling - Optimized */
+.slideshow {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1); /* Adjusted shadow for consistency */
+    padding-bottom: 40%; 
+    height: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    object-fit: cover; /* Fills the container, preventing gaps */
+    background-color: var(--light-bg);
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.image-caption {
+    margin-top: 25px;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+/* --- 8. Contact Section --- */
+.bg-blue {
+    padding: 100px 0;
+    background-color: var(--secondary-color);
+    border-top: 10px solid var(--primary-color); /* Light Blue Accent */
+}
+
+.bg-blue h3,
+.bg-blue p {
+    color: var(--white);
+    text-align: center;
+}
+
+.bg-blue h3 {
+    color: var(--primary-color); /* Light Blue heading on dark background */
+}
+
+#enrollment-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 40px auto 30px;
+    gap: 20px;
+}
+
+#enrollment-form input,
+#enrollment-form select {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+#enrollment-form select {
+    appearance: none;
+    background: var(--white) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23343a40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat right 15px center;
+    background-size: 18px;
+}
+
+#enrollment-form .cta-primary {
+    align-self: stretch;
+    background: var(--primary-color);
+    color: var(--white);
+    transition: background var(--transition-speed);
+}
+
+#enrollment-form .cta-primary:hover {
+    background: #0069d9;
+}
+
+#form-message {
+    padding: 20px;
+    background: #28a745;
+    color: var(--white);
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- 9. Footer --- */
+footer {
+    background: var(--secondary-color); /* Dark Black/Grey Footer */
+    color: #b8c1c9;
+    padding: 40px 0;
+    font-size: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #b8c1c9;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* --- 10. Animation CSS (Scroll Reveal) --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.program-card:nth-child(1),
+.feature-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.program-card:nth-child(2),
+.feature-item:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.program-card:nth-child(3),
+.feature-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.program-card:nth-child(4),
+.feature-item:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+/* --- 11. Responsive Design (Mobile Adjustments) --- */
+@media (max-width: 992px) {
+    #hero h2 {
+        font-size: 3rem;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .mission-box {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .slideshow {
+        max-width: 400px;
+        padding-bottom: 75%; /* Adjusted for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-header {
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    #main-nav ul {
+        flex-wrap: wrap;
+        gap: 5px 10px;
+        margin-top: 10px;
+    }
+
+    .nav-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .sub-tagline {
+        font-size: 1.3rem;
+    }
+
+    .program-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slideshow {
+        max-width: 100%;
+        padding-bottom: 75%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 15px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+/* ----------------------------------------------- */
+/* --- 12. Login Page Styling (login.html) --- */
+/* ----------------------------------------------- */
+#login-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg);
+}
+
+.login-card {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--primary-color);
+    text-align: center;
+}
+
+.login-heading {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.login-card .sub-heading {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.form-options a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+.login-submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Style for the OR divider */
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    line-height: 0;
+}
+
+.divider span {
+    background: var(--white);
+    padding: 0 15px;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.divider::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #e9ecef;
+    position: relative;
+    top: -1px;
+}
+
+.signup-link {
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+.signup-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for the login card */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 30px 20px;
+        margin: 0 5%;
+    }
+}
+
+
+/* ----------------------------------------------- */
+/* --- 13. Sign Up Page Styling (creat.html) --- */
+/* ----------------------------------------------- */
+#signup-section {
+    min-height: 90vh; /* Slightly taller to fit more fields */
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg);
+}
+
+.signup-card {
+    max-width: 450px;
+    margin: 30px auto; /* Increased top/bottom margin for taller form */
+    padding: 40px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--primary-color);
+    text-align: center;
+}
+
+.signup-heading {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.signup-card .sub-heading {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+/* Reusing input styles from login page */
+
+.signup-submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-link {
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.form-options.terms {
+    font-size: 0.9rem;
+}
+
+.form-options.terms a {
+    font-weight: 500;
+}
+
+/* Responsive adjustments for the sign up card */
+@media (max-width: 576px) {
+    .signup-card {
+        padding: 30px 20px;
+        margin: 20px 5%;
+    }
+}
